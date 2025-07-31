@@ -1,0 +1,9 @@
+export { default as UserManagement } from './admin/UserManagement';
+export { default as RoleManagement } from './admin/RoleManagement';
+export { default as ResourceManagement } from './admin/ResourceManagement';
+export { default as GroupManagement } from './admin/GroupManagement';
+export { default as ProjectManagement } from './admin/ProjectManagement';
+export { default as SessionManagement } from './admin/SessionManagement';
+export { default as HistoryManagement } from './admin/HistoryManagement';
+export { default as SafetyFilterManagement } from './admin/SafetyFilterManagement';
+export { default as Home } from './admin/Home';
