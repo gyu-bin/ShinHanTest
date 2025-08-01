@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Layout from "./Layout";
+import Layout from "./Latout";
 import {
   UserManagement,
   RoleManagement,
@@ -12,16 +12,18 @@ import {
   SafetyFilterManagement,
   Home,
 } from "./pages";
-import UserDetail from "./pages/admin/userDetail/UserDetail";
+import UserDetail from "./pages/admin/user/detail/UserDetail";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./contexts/AuthContext";
-import CreateUser from "./pages/admin/userDetail/createUser";
+import CreateUser from "./pages/admin/user/createUser";
 import IDE from "./pages/home/ide";
-import SafetyFilterDetail from "./pages/admin/userDetail/detail/SafetyFilterDetail";
-import RoleDetailPage from "./pages/admin/userDetail/detail/RoleDetailPage";
-import ProjectDetailPage from "./pages/admin/userDetail/detail/ProjectDetailPage";
-import GroupDetailPage from "./pages/admin/userDetail/detail/GroupDetailPage";
-import ResourcePresetDetail from "./pages/admin/userDetail/detail/ResourcePresetDetail";
+import SafetyFilterDetail from "./pages/admin/safety/detail/SafetyFilterDetail";
+import RoleDetailPage from "./pages/admin/role/detail/RoleDetailPage";
+import ProjectDetailPage from "./pages/admin/project/detail/ProjectDetailPage";
+import GroupDetailPage from "./pages/admin/group/detail/GroupDetailPage";
+import ResourcePresetDetail from "./pages/admin/resource/detail/ResourcePresetDetail";
+import ApproveManagement from "./pages/admin/approve/ApproveManagement";
+import Register from "./pages/home/register";
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
@@ -34,6 +36,7 @@ const App: React.FC = () => {
               <Route path="/" element={<Navigate to="/home" replace />} />
               <Route path="/home" element={<Home />} />
               <Route path="/home/ide" element={<IDE />} />
+              <Route path="/home/register" element={<Register />} />
               <Route
                 path="/admin/user-management"
                 element={<UserManagement />}
@@ -41,6 +44,10 @@ const App: React.FC = () => {
               <Route
                 path="/admin/role-management"
                 element={<RoleManagement />}
+              />
+              <Route
+                path="/admin/approve-management"
+                element={<ApproveManagement />}
               />
               <Route
                 path="/admin/resource-management"

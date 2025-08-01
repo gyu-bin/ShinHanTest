@@ -15,7 +15,7 @@ import {
   Chip,
 } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
-import { useApi } from "../../hooks/useApi";
+import { useApi } from "../../../hooks/useApi";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useNavigate } from "react-router-dom";
@@ -71,6 +71,7 @@ type RawPolicyItem = {
 type TaskPresetGrouped = {
   task_type: string;
   category: string;
+  updated_at: string;
   resources: RawPolicyItem[];
 };
 const ResourceManagement: React.FC = () => {
@@ -324,9 +325,13 @@ const ResourceManagement: React.FC = () => {
             </Box>
           ) : groupedTaskPresetData && groupedTaskPresetData.length > 0 ? (
             <TableContainer>
+              {" "}
               <Table size="small">
+                {" "}
                 <TableHead>
+                  {" "}
                   <TableRow>
+                    {" "}
                     <TableCell>No</TableCell>{" "}
                     <TableCell>업무프리셋명</TableCell>{" "}
                     <TableCell>유형</TableCell> <TableCell>사이즈</TableCell>{" "}
@@ -336,6 +341,7 @@ const ResourceManagement: React.FC = () => {
                   </TableRow>{" "}
                 </TableHead>{" "}
                 <TableBody>
+                  {" "}
                   {groupedTaskPresetData.map((item, index) =>
                     item.resources.map((res, resIndex) => (
                       <TableRow
@@ -345,6 +351,7 @@ const ResourceManagement: React.FC = () => {
                         }
                         style={{ cursor: "pointer" }}
                       >
+                        {" "}
                         {resIndex === 0 && (
                           <>
                             {" "}
